@@ -34,10 +34,10 @@ export const greenDojo = {
     "Prestige of collaborating directly with the WKF and ISO experts."
   ],
   milestones: [
-    { date: "Immediate", action: "Partner OID Registration (Organisation ID)" },
-    { date: "Jan 20", action: "Political Validation & Mandates signing" },
-    { date: "Feb 10", action: "Final Budget & WP allocation" },
-    { date: "Mar 5", action: "Submission to the European Commission" }
+    { date: "Immediate", action: "Partner OID Registration (Organisation ID)", status: "Critical" },
+    { date: "Jan 20", action: "Political Validation & Mandates signing", status: "In Progress" },
+    { date: "Feb 10", action: "Final Budget & WP allocation", status: "Planned" },
+    { date: "Mar 5", action: "Submission to the European Commission", status: "Deadline" }
   ],
   cta: {
     primary: { label: "Join the Consortium", href: "/join-us" },
