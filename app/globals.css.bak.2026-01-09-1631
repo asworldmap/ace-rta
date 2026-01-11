@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --bg:#071326;
+  --card:rgba(255,255,255,.06);
+  --card2:rgba(255,255,255,.08);
+  --border:rgba(255,255,255,.12);
+  --text:rgba(255,255,255,.92);
+  --muted:rgba(255,255,255,.68);
+  --blue:#2B6CFF;
+  --blue2:#1E4FA3;
+  --cyan:#26D7FF;
+}
+
+html{scroll-behavior:smooth;}
+body{
+  background:
+    radial-gradient(1200px 600px at 15% 10%, rgba(43,108,255,.28), transparent 60%),
+    radial-gradient(900px 500px at 80% 20%, rgba(38,215,255,.20), transparent 55%),
+    radial-gradient(900px 700px at 50% 90%, rgba(30,79,163,.22), transparent 55%),
+    var(--bg);
+  color: var(--text);
+}
+
+::selection{ background: rgba(43,108,255,.35); }
+
+.glass{
+  background: var(--card);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+}
+
+.glow{
+  box-shadow: 0 0 0 1px rgba(43,108,255,.18), 0 20px 60px rgba(7,19,38,.55);
+}
+
+.fade-up{ animation: fadeUp .7s ease-out both; }
+@keyframes fadeUp{
+  from{ opacity:0; transform: translateY(14px); }
+  to{ opacity:1; transform: translateY(0); }
+}
+
+.floaty{ animation: floaty 7s ease-in-out infinite; }
+@keyframes floaty{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-6px); }
+}

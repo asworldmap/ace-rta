@@ -1,0 +1,93 @@
+const bullets = [
+  {
+    title: "Goal",
+    text: "Design and deliver a strong proposal (Green Dojo) for the World Karate Federation, using regenerative design and ESG as levers for measurable impact.",
+  },
+  {
+    title: "What’s inside",
+    text: "Strategic narrative, workplan, requirements alignment, deliverables, methodology, and an internal documentation hub for governance and team workflow.",
+  },
+  {
+    title: "How we work",
+    text: "Flexible method: diagnose → co-design → implement → evaluate. Innovation and digitalisation are transversal across the full pipeline.",
+  },
+];
+
+export default function Home() {
+  return (
+    <main className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+      <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-10">
+        <div className="pointer-events-none absolute -top-24 right-[-120px] h-[320px] w-[320px] rounded-full bg-blue-500/20 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-24 left-[-120px] h-[320px] w-[320px] rounded-full bg-cyan-400/15 blur-3xl" />
+
+        <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="text-sm text-white/60">Internal workspace</p>
+            <h1 className="mt-2 text-4xl font-semibold tracking-tight sm:text-5xl">
+              Green Dojo
+            </h1>
+            <p className="mt-3 text-white/70">
+              Regenerating through Action · by ACE-RTA
+            </p>
+            <p className="mt-5 max-w-2xl text-white/80">
+              Private working space to build a competitive proposal: structure, evidence, requirements
+              alignment, and a team documentation repository.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a
+                href="/proposal"
+                className="rounded-2xl border border-white/10 bg-gradient-to-r from-blue-500/70 to-cyan-400/40 px-5 py-3 text-sm font-medium text-white shadow-lg shadow-blue-500/10 hover:brightness-110"
+              >
+                View proposal →
+              </a>
+              <a
+                href="/team"
+                className="rounded-2xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-medium text-white/90 hover:bg-white/10"
+              >
+                Team access (docs)
+              </a>
+            </div>
+          </div>
+
+          <div className="floaty rounded-3xl border border-white/10 bg-white/5 p-4">
+            <div className="text-xs text-white/60">Status</div>
+            <div className="mt-2 grid gap-3">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <div className="text-xs text-white/60">Domain</div>
+                <div className="mt-1 text-sm">ace-rta.asensios.com</div>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <div className="text-xs text-white/60">Runtime</div>
+                <div className="mt-1 text-sm">PM2 · Next.js (port 3004)</div>
+              </div>
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
+                <div className="text-xs text-white/60">Mode</div>
+                <div className="mt-1 text-sm">Internal · Protected docs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {bullets.map((b) => (
+          <div key={b.title} className="rounded-3xl border border-white/10 bg-white/5 p-6">
+            <h2 className="text-lg font-semibold">{b.title}</h2>
+            <p className="mt-2 text-sm text-white/75">{b.text}</p>
+          </div>
+        ))}
+      </section>
+
+      <section className="mt-10 rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8">
+        <h3 className="text-lg font-semibold">Next recommended step</h3>
+        <p className="mt-2 text-sm text-white/75">
+          Upload <code className="rounded bg-white/10 px-2 py-1">wkf.png</code> into{" "}
+          <code className="rounded bg-white/10 px-2 py-1">/public</code> and add PDFs into{" "}
+          <code className="rounded bg-white/10 px-2 py-1">/var/www/ace-rta/secure-docs</code>.
+          Then review the Team area at <code className="rounded bg-white/10 px-2 py-1">/team</code>.
+        </p>
+      </section>
+    </main>
+  );
+}

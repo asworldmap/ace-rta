@@ -1,0 +1,5 @@
+<svg width="240" height="56" viewBox="0 0 240 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="1" y="1" width="238" height="54" rx="14" stroke="#1E4FA3" stroke-width="2"/>
+  <path d="M24 38V18h10.5c5.4 0 8.5 2.7 8.5 7.2 0 4.6-3.1 7.3-8.5 7.3H29.5V38H24Zm5.5-10h4.8c2.6 0 4-1 4-2.8 0-1.7-1.4-2.7-4-2.7h-4.8V28Z" fill="#0B1B3A"/>
+  <text x="74" y="34" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#0B1B3A">ACE-RTA · Green Dojo</text>
+</svg>

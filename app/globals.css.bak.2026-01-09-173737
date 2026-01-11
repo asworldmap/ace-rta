@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --bg:#071326;
+  --card:rgba(255,255,255,.06);
+  --card2:rgba(255,255,255,.08);
+  --border:rgba(255,255,255,.12);
+  --text:rgba(255,255,255,.92);
+  --muted:rgba(255,255,255,.70);
+  --blue:#2B6CFF;
+  --cyan:#26D7FF;
+}
+
+html{scroll-behavior:smooth;}
+body{
+  background: radial-gradient(1200px 700px at 20% -10%, rgba(43,108,255,.20), transparent 55%),
+              radial-gradient(900px 520px at 90% 10%, rgba(38,215,255,.14), transparent 50%),
+              var(--bg);
+  color:var(--text);
+}
+
+a{ text-underline-offset: 3px; }
+
+::selection{
+  background: rgba(43,108,255,.35);
+}
+
+.container-xl{
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@media (min-width: 640px){
+  .container-xl{ padding-inline: 1.5rem; }
+}
+
+.hr-soft{
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,.14), transparent);
+}
+
+.kbd{
+  border: 1px solid rgba(255,255,255,.16);
+  background: rgba(255,255,255,.06);
+  border-radius: .6rem;
+  padding: .15rem .45rem;
+  font-size: .8rem;
+}

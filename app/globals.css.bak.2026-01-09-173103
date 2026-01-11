@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --bg:#071326;
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.70);
+  --card: rgba(255,255,255,.06);
+  --card2: rgba(255,255,255,.09);
+  --border: rgba(255,255,255,.12);
+  --blue:#2B6CFF;
+  --cyan:#26D7FF;
+}
+
+html{ scroll-behavior:smooth; }
+
+body{
+  color: var(--text);
+  background:
+    radial-gradient(1200px 700px at 12% 10%, rgba(43,108,255,.28), transparent 60%),
+    radial-gradient(900px 520px at 85% 18%, rgba(38,215,255,.18), transparent 55%),
+    radial-gradient(900px 700px at 55% 92%, rgba(30,79,163,.22), transparent 55%),
+    var(--bg);
+}
+
+a{ color: inherit; }
+::selection{ background: rgba(43,108,255,.35); }
+
+@keyframes floaty { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-6px);} }
+.floaty{ animation: floaty 6s ease-in-out infinite; }
+

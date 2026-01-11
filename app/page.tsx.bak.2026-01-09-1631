@@ -1,0 +1,124 @@
+const sections = [
+  {
+    title: "Goal",
+    text: "Design and deliver a strong proposal (Green Dojo) for the World Karate Federation, using regenerative design and ESG as levers for measurable impact.",
+  },
+  {
+    title: "What’s inside",
+    text: "Strategic narrative, workplan, requirements alignment, deliverables, methodology, and an internal repository for governance and team documentation.",
+  },
+  {
+    title: "How we work",
+    text: "Flexible method: diagnosis → co-design → implementation → evaluation, with innovation and digitalisation as cross-cutting accelerators.",
+  },
+];
+
+const quick = [
+  { k: "Port / App", v: "3004 · Next.js" },
+  { k: "Domain", v: "ace-rta.asensios.com" },
+  { k: "Status", v: "Production (PM2)" },
+];
+
+export default function Home() {
+  return (
+    <main className="mx-auto max-w-6xl px-4 sm:px-6 py-10">
+      {/* Hero */}
+      <section className="fade-up glass glow rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+        <div className="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-blue-500/20 blur-3xl floaty" />
+        <div className="absolute -bottom-28 -left-24 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl floaty" />
+
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between relative">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-3">
+              <img
+                src="/wkf.png"
+                alt="WKF"
+                className="h-8 w-auto rounded-lg border border-white/10 bg-white/5 p-1"
+              />
+              <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs opacity-80">
+                Internal workspace
+              </span>
+            </div>
+
+            <h1 className="mt-4 text-3xl sm:text-5xl font-semibold tracking-tight">
+              Green Dojo
+            </h1>
+            <p className="mt-3 text-base sm:text-lg opacity-80">
+              Regenerating through Action · by ACE-RTA
+            </p>
+
+            <p className="mt-5 text-sm sm:text-base opacity-80 leading-relaxed">
+              Private working space to build a competitive proposal: structure, evidence,
+              requirements alignment, and a team documentation repository.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a
+                href="/proposal"
+                className="rounded-xl bg-gradient-to-r from-blue-500/70 to-cyan-400/60 px-4 py-3 text-sm font-medium text-black hover:opacity-95 transition"
+              >
+                View proposal →
+              </a>
+              <a
+                href="/team"
+                className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm hover:bg-white/10 transition"
+              >
+                Team access (docs)
+              </a>
+              <a
+                href="/activities"
+                className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm hover:bg-white/10 transition"
+              >
+                Workplan
+              </a>
+            </div>
+          </div>
+
+          <div className="grid w-full max-w-md gap-3">
+            {quick.map((q) => (
+              <div key={q.k} className="glass rounded-2xl p-4">
+                <div className="text-xs opacity-60">{q.k}</div>
+                <div className="mt-1 text-sm font-medium">{q.v}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Content cards */}
+      <section className="mt-10 grid gap-5 md:grid-cols-3">
+        {sections.map((s) => (
+          <div key={s.title} className="fade-up glass rounded-3xl p-6">
+            <h2 className="text-lg font-semibold tracking-tight">{s.title}</h2>
+            <p className="mt-3 text-sm opacity-80 leading-relaxed">{s.text}</p>
+          </div>
+        ))}
+      </section>
+
+      {/* Next step */}
+      <section className="mt-10 fade-up glass rounded-3xl p-6 sm:p-8">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div>
+            <h3 className="text-lg font-semibold tracking-tight">Recommended next step</h3>
+            <p className="mt-2 text-sm opacity-80 leading-relaxed">
+              Upload <code className="px-2 py-1 rounded bg-white/10">wkf.png</code> to{" "}
+              <code className="px-2 py-1 rounded bg-white/10">/public</code> and add PDFs to{" "}
+              <code className="px-2 py-1 rounded bg-white/10">/var/www/ace-rta/secure-docs</code>.
+              Then review the internal hub at <code className="px-2 py-1 rounded bg-white/10">/team</code>.
+            </p>
+          </div>
+          <a
+            href="/team"
+            className="rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm hover:bg-white/10 transition"
+          >
+            Go to /team →
+          </a>
+        </div>
+      </section>
+
+      <footer className="mt-10 pb-8 text-xs opacity-60">
+        Internal only · Green Dojo workspace · ACE-RTA
+      </footer>
+    </main>
+  );
+}

@@ -1,0 +1,95 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
+export default function TopNav() {
+  const links = [
+    { href: "/", label: "Home" },
+    { href: "/proposal", label: "Proposal" },
+    { href: "/compliance", label: "Compliance" },
+    { href: "/activities", label: "Activities" },
+    { href: "/team", label: "Team (Docs)" },
+  ];
+
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onEsc = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("keydown", onEsc);
+    return () => window.removeEventListener("keydown", onEsc);
+  }, []);
+
+  return (
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-black/20 backdrop-blur">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
+        <a href="/" className="flex items-center gap-3">
+          <img
+            src="/logo_acer-rta.avif"
+            alt="ACE-RTA"
+            className="h-8 w-auto rounded-lg border border-white/10 bg-white/5 p-1"
+          />
+          <div className="leading-tight">
+            <div className="text-sm font-semibold tracking-tight">Green Dojo</div>
+            <div className="text-xs opacity-70">WKF · by ACE-RTA</div>
+          </div>
+        </a>
+
+        {/* Desktop */}
+        <nav className="hidden items-center gap-6 text-sm md:flex">
+          {links.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              className="opacity-80 hover:opacity-100 transition"
+            >
+              {l.label}
+            </a>
+          ))}
+          <a
+            href="/proposal"
+            className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition"
+          >
+            View proposal →
+          </a>
+        </nav>
+
+        {/* Mobile */}
+        <button
+          className="md:hidden rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm hover:bg-white/10 transition"
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+          aria-label="Toggle menu"
+        >
+          ☰
+        </button>
+      </div>
+
+      {/* Mobile panel */}
+      {open && (
+        <div className="md:hidden border-t border-white/10 bg-black/30">
+          <div className="mx-auto max-w-6xl px-4 py-3 sm:px-6">
+            <div className="grid gap-2">
+              {links.map((l) => (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm hover:bg-white/10 transition"
+                  onClick={() => setOpen(false)}
+                >
+                  {l.label}
+                </a>
+              ))}
+              <a
+                href="/proposal"
+                className="rounded-xl bg-gradient-to-r from-blue-500/70 to-cyan-400/60 px-4 py-3 text-sm font-medium text-black"
+                onClick={() => setOpen(false)}
+              >
+                View proposal →
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+}
